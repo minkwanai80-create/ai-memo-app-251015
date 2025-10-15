@@ -73,15 +73,15 @@ export default function GenerateImagePage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12 px-4">
+        <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 py-12 px-4">
             <div className="max-w-5xl mx-auto space-y-8">
                 {/* 헤더 */}
                 <div className="text-center">
-                    <h1 className="text-4xl font-bold text-gray-900 mb-2">
-                        🎨 AI 이미지 생성
+                    <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
+                        🎨✨ AI 이미지 생성
                     </h1>
-                    <p className="text-gray-600">
-                        텍스트로 이미지를 만들어보세요 (Imagen API)
+                    <p className="text-purple-600 font-medium text-lg">
+                        💭 텍스트로 귀여운 이미지를 만들어보세요 🌸
                     </p>
                 </div>
 

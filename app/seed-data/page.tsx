@@ -72,14 +72,14 @@ export default function SeedDataPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12 px-4">
+                    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 py-12 px-4">
             <div className="max-w-2xl mx-auto space-y-6">
                 <div className="text-center">
-                    <h1 className="text-3xl font-bold text-gray-900 mb-2">
-                        🌱 목업 데이터 생성
+                    <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
+                        🌱✨ 목업 데이터 생성
                     </h1>
-                    <p className="text-gray-600">
-                        테스트용 샘플 노트를 생성합니다
+                    <p className="text-purple-600 font-medium text-lg">
+                        🎀 테스트용 귀여운 샘플 노트를 만들어요 💕
                     </p>
                 </div>
 
