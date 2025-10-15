@@ -11,6 +11,7 @@ import { useAutoSave } from '@/lib/notes/hooks'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import { Eye, Edit3 } from 'lucide-react'
+import { CuteBackground } from '@/components/layout/cute-background'
 import type { Note } from '@/lib/db/schema/notes'
 
 interface NoteEditorProps {
@@ -54,25 +55,31 @@ export function NoteEditor({ note, className }: NoteEditorProps) {
     }
 
     return (
-        <div
-            className={cn(
-                'min-h-screen bg-gray-50 dark:bg-gray-900',
-                className
-            )}
-        >
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <>
+            <CuteBackground />
+            <div
+                className={cn(
+                    'min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative',
+                    className
+                )}
+            >
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
                 {/* 헤더 영역 */}
                 <div className="flex items-center justify-between mb-6">
                     <BackButton />
                     <div className="flex items-center gap-3">
                         {/* 편집/미리보기 토글 */}
-                        <div className="flex items-center gap-1 border border-gray-200 dark:border-gray-700 rounded-lg p-1">
+                        <div className="flex items-center gap-1 border-2 border-purple-200 bg-white rounded-xl p-1 shadow-sm">
                             <Button
                                 variant={viewMode === 'edit' ? 'default' : 'ghost'}
                                 size="sm"
                                 onClick={() => setViewMode('edit')}
+                                className={cn(
+                                    viewMode === 'edit' &&
+                                        'bg-gradient-to-r from-pink-500 to-purple-500'
+                                )}
                             >
-                                <Edit3 className="h-4 w-4 mr-1" />
+                                <span className="text-lg mr-1">✏️</span>
                                 편집
                             </Button>
                             <Button
@@ -81,8 +88,12 @@ export function NoteEditor({ note, className }: NoteEditorProps) {
                                 }
                                 size="sm"
                                 onClick={() => setViewMode('preview')}
+                                className={cn(
+                                    viewMode === 'preview' &&
+                                        'bg-gradient-to-r from-purple-500 to-blue-500'
+                                )}
                             >
-                                <Eye className="h-4 w-4 mr-1" />
+                                <span className="text-lg mr-1">👁️</span>
                                 미리보기
                             </Button>
                         </div>
@@ -102,7 +113,7 @@ export function NoteEditor({ note, className }: NoteEditorProps) {
                 </div>
 
                 {/* 편집 영역 */}
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 overflow-hidden">
+                <div className="bg-white rounded-2xl shadow-lg border-2 border-pink-200 overflow-hidden">
                     {/* 제목 영역 */}
                     <div className="p-6 border-b border-gray-200 dark:border-gray-700">
                         {isEditingTitle ? (
@@ -180,7 +191,8 @@ export function NoteEditor({ note, className }: NoteEditorProps) {
                         </div>
                     </div>
                 )}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
