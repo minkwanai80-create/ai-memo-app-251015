@@ -6,9 +6,10 @@ import * as schema from './schema/notes'
 const connectionString = process.env.DATABASE_URL!
 
 // Supabase 데이터베이스 연결 설정
+// Direct Connection은 prepare=true 사용 가능 (성능 향상)
 const client = postgres(connectionString, {
-    // Pooler 모드에서는 prepare를 비활성화해야 함
-    prepare: false,
+    // Direct Connection에서는 prepare 활성화 가능
+    prepare: !connectionString.includes('pooler'),
     
     // 연결 풀 설정
     max: 10, // 최대 연결 수
@@ -20,6 +21,9 @@ const client = postgres(connectionString, {
     connection: {
         application_name: 'ai-memo-app'
     },
+    
+    // SSL 설정 (Supabase는 SSL 필수)
+    ssl: 'require',
     
     // 디버깅
     onnotice: () => {}, // PostgreSQL notice 무시
