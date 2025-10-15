@@ -10,7 +10,6 @@ import { MarkdownPreview } from './markdown-preview'
 import { useAutoSave } from '@/lib/notes/hooks'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
-import { Eye, Edit3 } from 'lucide-react'
 import { CuteBackground } from '@/components/layout/cute-background'
 import type { Note } from '@/lib/db/schema/notes'
 

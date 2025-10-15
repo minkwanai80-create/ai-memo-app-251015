@@ -11,7 +11,6 @@ import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
-import Image from 'next/image'
 
 type AspectRatio = '1:1' | '16:9' | '9:16' | '4:3' | '3:4'
 

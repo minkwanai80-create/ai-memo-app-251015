@@ -11,9 +11,7 @@ import { Button } from '@/components/ui/button'
 import { LogoutDialog } from '@/components/auth/logout-dialog'
 import {
     Home,
-    FileText,
     PlusCircle,
-    Sparkles,
     Image as ImageIcon,
     TestTube,
     Database
@@ -81,10 +79,6 @@ export function Navigation() {
                                             isActive &&
                                                 'bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600',
                                             !isActive &&
-                                                item.highlight &&
-                                                'bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white',
-                                            !isActive &&
-                                                !item.highlight &&
                                                 'hover:bg-purple-100 hover:text-purple-700'
                                         )}
                                     >

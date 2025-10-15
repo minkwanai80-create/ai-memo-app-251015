@@ -6,7 +6,6 @@ import {
     type NotesSort
 } from '@/lib/notes/queries'
 import { Button } from '@/components/ui/button'
-import { Plus } from 'lucide-react'
 import Link from 'next/link'
 import { NotesSortControl } from '@/components/notes/notes-sort'
 import { NotesList } from '@/components/notes/notes-list'

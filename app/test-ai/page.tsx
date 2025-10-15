@@ -66,11 +66,11 @@ export default function TestAIPage() {
             setTextGen(prev => ({
                 ...prev,
                 loading: false,
-                result: result.data.text,
-                tokens: result.data.tokensUsed
+                result: result.data?.text,
+                tokens: result.data?.tokensUsed
                     ? `입력: ${result.data.tokensUsed.input}, 출력: ${result.data.tokensUsed.output}, 총합: ${result.data.tokensUsed.total}`
                     : '토큰 정보 없음',
-                latency: `${result.data.latencyMs}ms`
+                latency: `${result.data?.latencyMs}ms`
             }))
         } else {
             setTextGen(prev => ({

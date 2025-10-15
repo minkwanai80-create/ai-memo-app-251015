@@ -47,12 +47,13 @@ export function getGeminiConfig(): GeminiConfig {
  */
 export function getEnvironment(): 'development' | 'staging' | 'production' {
     const env = process.env.NODE_ENV
+    const customEnv = process.env.APP_ENV
 
-    if (env === 'production') {
+    if (env === 'production' || customEnv === 'production') {
         return 'production'
     }
 
-    if (env === 'staging') {
+    if (customEnv === 'staging') {
         return 'staging'
     }
 

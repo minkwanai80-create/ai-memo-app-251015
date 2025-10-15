@@ -10,6 +10,7 @@ import { seedMockNotes, getUserInfo } from './actions'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Loader2 } from 'lucide-react'
+import Link from 'next/link'
 
 export default function SeedDataPage() {
     const [userInfo, setUserInfo] = useState<{
@@ -162,7 +163,7 @@ export default function SeedDataPage() {
                             )}
                             {result.success && (
                                 <Button asChild className="w-full mt-4">
-                                    <a href="/notes">노트 목록 보기</a>
+                                    <Link href="/notes">노트 목록 보기</Link>
                                 </Button>
                             )}
                         </CardContent>

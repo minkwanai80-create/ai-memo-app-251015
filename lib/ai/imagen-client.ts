@@ -86,7 +86,6 @@ export class ImagenClient {
                         numberOfImages,
                         aspectRatio,
                         includeRaiReason: true,
-                        personGeneration: 'allow_adult',
                         ...(imageSize && { imageSize })
                     }
                 }),
