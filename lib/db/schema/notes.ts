@@ -6,8 +6,8 @@ export const notes = pgTable('notes', {
     userId: uuid('user_id').notNull(),
     title: text('title').notNull().default('제목 없음'),
     content: text('content'),
-    summary: text('summary'), // AI 생성 요약
-    tags: text('tags'), // 쉼표로 구분된 태그
+    // summary: text('summary'), // AI 생성 요약 - DB 적용 전까지 주석
+    // tags: text('tags'), // 쉼표로 구분된 태그 - DB 적용 전까지 주석
     createdAt: timestamp('created_at', { withTimezone: true })
         .defaultNow()
         .notNull(),

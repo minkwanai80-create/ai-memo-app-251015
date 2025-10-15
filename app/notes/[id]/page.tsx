@@ -2,8 +2,8 @@ import { notFound, redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import { getNoteById } from '@/lib/notes/queries'
 import { NoteEditor } from '@/components/notes/note-editor'
-import { NoteSummary } from '@/components/notes/note-summary'
-import { NoteTags } from '@/components/notes/note-tags'
+// import { NoteSummary } from '@/components/notes/note-summary'
+// import { NoteTags } from '@/components/notes/note-tags'
 
 export default async function NoteDetailPage({
     params
@@ -28,8 +28,9 @@ export default async function NoteDetailPage({
 
     return (
         <div>
-            <NoteSummary noteId={note.id} initialSummary={note.summary} />
-            <NoteTags noteId={note.id} initialTags={note.tags} />
+            {/* DB 마이그레이션 후 활성화 */}
+            {/* <NoteSummary noteId={note.id} initialSummary={note.summary} /> */}
+            {/* <NoteTags noteId={note.id} initialTags={note.tags} /> */}
             <NoteEditor note={note} />
         </div>
     )
