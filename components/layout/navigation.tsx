@@ -26,16 +26,9 @@ export function Navigation() {
     const navItems = [
         {
             href: '/notes',
-            label: '📚 노트',
+            label: '📚 노트 목록',
             icon: Home,
             emoji: '📚'
-        },
-        {
-            href: '/notes/new',
-            label: '✏️ 새 노트',
-            icon: PlusCircle,
-            highlight: true,
-            emoji: '✏️'
         }
     ]
 
