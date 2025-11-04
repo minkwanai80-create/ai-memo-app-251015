@@ -6,11 +6,12 @@ import {
     type NotesSort
 } from '@/lib/notes/queries'
 import { Button } from '@/components/ui/button'
-import { Plus } from 'lucide-react'
 import Link from 'next/link'
 import { NotesSortControl } from '@/components/notes/notes-sort'
 import { NotesList } from '@/components/notes/notes-list'
 import { SearchInput } from '@/components/notes/search-input'
+import { Navigation } from '@/components/layout/navigation'
+import { CuteBackground } from '@/components/layout/cute-background'
 
 export default async function NotesPage({
     searchParams
@@ -54,23 +55,28 @@ export default async function NotesPage({
           })
 
     return (
-        <div className="min-h-screen bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                {/* 헤더 */}
-                <div className="flex items-center justify-between mb-8">
+        <>
+            <Navigation />
+            <CuteBackground />
+            <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 relative">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+                    {/* 헤더 */}
+                    <div className="flex items-center justify-between mb-8">
                     <div>
-                        <h1 className="text-3xl font-bold text-gray-900">
+                        <h1 className="text-4xl font-bold bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent flex items-center gap-2">
+                            <span className="text-4xl">📝</span>
                             내 노트
                         </h1>
-                        <p className="text-gray-600 mt-1">
+                        <p className="text-purple-600 mt-2 font-medium">
                             {searchQuery
-                                ? `'${searchQuery}' 검색 결과 ${totalCount}개`
-                                : `총 ${totalCount}개의 노트`}
+                                ? `🔍 '${searchQuery}' 검색 결과 ${totalCount}개`
+                                : `💝 총 ${totalCount}개의 소중한 노트`}
                         </p>
                     </div>
                     <Link href="/notes/new">
-                        <Button>
-                            <Plus className="w-4 h-4 mr-2" />새 노트 작성
+                        <Button className="bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 shadow-lg hover:shadow-xl transition-all">
+                            <span className="text-lg mr-1">✨</span>
+                            새 노트 작성
                         </Button>
                     </Link>
                 </div>
@@ -163,8 +169,9 @@ export default async function NotesPage({
                         </Link>
                     </div>
                 )}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

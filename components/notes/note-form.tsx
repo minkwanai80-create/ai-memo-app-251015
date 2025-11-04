@@ -63,7 +63,8 @@ export function NoteForm() {
                                 maxLength={200}
                             />
                             <p className="text-xs text-gray-500">
-                                제목이 비어있으면 "제목 없음"으로 저장됩니다.
+                                제목이 비어있으면 &quot;제목 없음&quot;으로
+                                저장됩니다.
                             </p>
                         </div>
 

@@ -66,11 +66,11 @@ export default function TestAIPage() {
             setTextGen(prev => ({
                 ...prev,
                 loading: false,
-                result: result.data.text,
-                tokens: result.data.tokensUsed
+                result: result.data?.text,
+                tokens: result.data?.tokensUsed
                     ? `입력: ${result.data.tokensUsed.input}, 출력: ${result.data.tokensUsed.output}, 총합: ${result.data.tokensUsed.total}`
                     : '토큰 정보 없음',
-                latency: `${result.data.latencyMs}ms`
+                latency: `${result.data?.latencyMs}ms`
             }))
         } else {
             setTextGen(prev => ({
@@ -82,14 +82,14 @@ export default function TestAIPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12 px-4">
+        <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 py-12 px-4">
             <div className="max-w-4xl mx-auto space-y-8">
                 <div className="text-center">
-                    <h1 className="text-4xl font-bold text-gray-900 mb-2">
-                        🤖 Gemini API 테스트
+                    <h1 className="text-5xl font-bold bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
+                        🤖✨ Gemini API 테스트
                     </h1>
-                    <p className="text-gray-600">
-                        Google Gemini API 연동 상태를 확인하고 테스트하세요
+                    <p className="text-purple-600 font-medium text-lg">
+                        🌈 Google Gemini API 연동 상태를 확인하고 테스트하세요 💝
                     </p>
                 </div>
 

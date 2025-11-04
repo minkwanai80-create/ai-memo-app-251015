@@ -30,7 +30,7 @@ export function MarkdownPreview({ content }: MarkdownPreviewProps) {
                 rehypePlugins={[rehypeRaw, rehypeSanitize]}
                 components={{
                     // 코드 블록 스타일링
-                    code({ node, className, children, ...props }) {
+                    code({ className, children, ...props }) {
                         const inline = !className
                         return inline ? (
                             <code
@@ -49,7 +49,7 @@ export function MarkdownPreview({ content }: MarkdownPreviewProps) {
                         )
                     },
                     // 링크 스타일링
-                    a({ node, children, ...props }) {
+                    a({ children, ...props }) {
                         return (
                             <a
                                 className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
@@ -62,7 +62,7 @@ export function MarkdownPreview({ content }: MarkdownPreviewProps) {
                         )
                     },
                     // 체크박스 스타일링
-                    input({ node, ...props }) {
+                    input({ ...props }) {
                         if (props.type === 'checkbox') {
                             return (
                                 <input
@@ -75,7 +75,7 @@ export function MarkdownPreview({ content }: MarkdownPreviewProps) {
                         return <input {...props} />
                     },
                     // 테이블 스타일링
-                    table({ node, children, ...props }) {
+                    table({ children, ...props }) {
                         return (
                             <div className="overflow-x-auto my-4">
                                 <table
@@ -88,7 +88,7 @@ export function MarkdownPreview({ content }: MarkdownPreviewProps) {
                         )
                     },
                     // 인용구 스타일링
-                    blockquote({ node, children, ...props }) {
+                    blockquote({ children, ...props }) {
                         return (
                             <blockquote
                                 className="border-l-4 border-blue-500 pl-4 py-2 my-4 italic bg-blue-50 dark:bg-blue-950/30"

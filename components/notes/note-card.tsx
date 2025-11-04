@@ -38,7 +38,10 @@ export function NoteCard({
     return (
         <Card
             className={cn(
-                'hover:shadow-lg transition-all duration-200 cursor-pointer h-full group',
+                'hover:shadow-xl transition-all duration-200 cursor-pointer h-full group',
+                'bg-gradient-to-br from-white via-pink-50 to-purple-50',
+                'border-2 border-pink-200 hover:border-purple-300',
+                'hover:scale-105 hover:-translate-y-1',
                 className
             )}
         >

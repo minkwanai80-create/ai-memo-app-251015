@@ -46,14 +46,15 @@ export async function generateNoteSummary(noteId: string) {
         // 요약 생성
         const summary = await summarizeNote(note.content || '')
 
+        // TODO: DB 마이그레이션 후 활성화
         // DB 업데이트
-        await db
-            .update(notes)
-            .set({
-                summary,
-                updatedAt: new Date()
-            })
-            .where(eq(notes.id, noteId))
+        // await db
+        //     .update(notes)
+        //     .set({
+        //         summary,
+        //         updatedAt: new Date()
+        //     })
+        //     .where(eq(notes.id, noteId))
 
         // 페이지 재검증
         revalidatePath(`/notes/${noteId}`)
@@ -100,16 +101,17 @@ export async function generateNoteTags(noteId: string) {
 
         // 태그 생성
         const tagsArray = await generateTags(note.content || '')
-        const tagsString = tagsArray.join(', ')
+        // const tagsString = tagsArray.join(', ')
 
+        // TODO: DB 마이그레이션 후 활성화
         // DB 업데이트
-        await db
-            .update(notes)
-            .set({
-                tags: tagsString,
-                updatedAt: new Date()
-            })
-            .where(eq(notes.id, noteId))
+        // await db
+        //     .update(notes)
+        //     .set({
+        //         tags: tagsString,
+        //         updatedAt: new Date()
+        //     })
+        //     .where(eq(notes.id, noteId))
 
         // 페이지 재검증
         revalidatePath(`/notes/${noteId}`)
@@ -128,7 +130,7 @@ export async function generateNoteTags(noteId: string) {
 /**
  * 노트 태그 수동 업데이트
  */
-export async function updateNoteTags(noteId: string, tags: string[]) {
+export async function updateNoteTags(noteId: string, _tags: string[]) {
     try {
         const supabase = await createClient()
         const {
@@ -150,21 +152,22 @@ export async function updateNoteTags(noteId: string, tags: string[]) {
             return { success: false, error: '권한이 없습니다.' }
         }
 
-        const tagsString = tags.join(', ')
+        // const tagsString = tags.join(', ')
 
-        await db
-            .update(notes)
-            .set({
-                tags: tagsString,
-                updatedAt: new Date()
-            })
-            .where(eq(notes.id, noteId))
+        // TODO: DB 마이그레이션 후 활성화
+        // await db
+        //     .update(notes)
+        //     .set({
+        //         tags: tagsString,
+        //         updatedAt: new Date()
+        //     })
+        //     .where(eq(notes.id, noteId))
 
         revalidatePath(`/notes/${noteId}`)
         revalidatePath('/notes')
 
         return { success: true }
-    } catch (error) {
+    } catch (_error) {
         return { success: false, error: '태그 업데이트 실패' }
     }
 }
